@@ -1,4 +1,5 @@
 import javax.swing.JFrame;
+import java.awt.*;
 
 /**
  * JFrameフレーム
@@ -11,5 +12,11 @@ public class Window extends JFrame {
         setLocationRelativeTo(null);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public void paint(Graphics g) {
+        super.paint(g);
+        g.setColor(Color.RED);
+        g.fillOval(110, 80, 100, 100);
     }
 }
