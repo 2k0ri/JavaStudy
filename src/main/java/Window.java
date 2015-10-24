@@ -14,9 +14,18 @@ public class Window extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
+    @Override
     public void paint(Graphics g) {
         super.paint(g);
         g.setColor(Color.RED);
         g.fillOval(110, 80, 100, 100);
+    }
+}
+
+class SubThread implements Runnable {
+
+    @Override
+    public void run() {
+
     }
 }
