@@ -70,6 +70,14 @@ public class Ball implements Runnable {
 		this.color = color;
 	}
 
+	public void reflectX() {
+		this.mx *= -1;
+	}
+
+	public void reflectY() {
+		this.my *= -1;
+	}
+
 	@Override
 	public void run() {
 		while (true) {

@@ -61,6 +61,10 @@ public class Window extends JFrame {
 		if (initialized) {
 			buffer.clearRect(0, 0, getWidth(), getHeight());
 			for (Ball ball : balls) {
+				if (ball.getY() < getHeight() || getHeight() < ball.getY())
+					ball.reflectY();
+				if (ball.getX() < getWidth() || getWidth() < ball.getX())
+					ball.reflectX();
 				buffer.setColor(ball.getColor());
 				buffer.fillOval(ball.getX(), ball.getY(), ball.getR(), ball.getR());
 			}
