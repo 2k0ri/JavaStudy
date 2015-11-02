@@ -43,17 +43,13 @@ public class Window extends JFrame {
 		}
 
 		// 単一Thread 実行するやつ
-		new Thread(new Runnable() {
-
-			@Override
-			public void run() {
-				while (true) {
-					repaint();
-					try {
-						TimeUnit.MILLISECONDS.sleep(200);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
+		new Thread(() -> {
+			while (true) {
+				repaint();
+				try {
+					TimeUnit.MILLISECONDS.sleep(200);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
 				}
 			}
 		}).start();
